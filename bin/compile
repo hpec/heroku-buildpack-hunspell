@@ -52,7 +52,11 @@ fi
 echo "-----> Updating environment variables"
 PROFILE_PATH="$BUILD_DIR/.profile.d/hunspell.sh"
 ACTUAL_INSTALL_PATH="$HOME/vendor/hunspell"
+echo "----------> profile path $PROFILE_PATH"
+echo "----------> actual install path $ACTUAL_INSTALL_PATH"
+ls -1 $ACTUAL_INSTALL_PATH
 mkdir -p $(dirname $PROFILE_PATH)
 echo "export PATH=$ACTUAL_INSTALL_PATH/bin:\$PATH" >> $PROFILE_PATH
 echo "export LD_LIBRARY_PATH=$ACTUAL_INSTALL_PATH/lib:\$LD_LIBRARY_PATH" >> $PROFILE_PATH
-
+echo "-------------------> profile path file"
+cat $PROFILE_PATH
