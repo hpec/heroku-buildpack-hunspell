@@ -47,6 +47,7 @@ else
   echo "-----> Extracting Hunspell $CACHE_FILE => $VENDOR_DIR"
   tar xzf $CACHE_FILE -C $VENDOR_DIR
 fi
+rm $CACHE_FILE
 
 # update PATH and LD_LIBRARY_PATH
 echo "-----> Updating environment variables"
