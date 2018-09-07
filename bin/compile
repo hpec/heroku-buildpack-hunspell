@@ -13,6 +13,12 @@ INSTALL_DIR="$VENDOR_DIR/hunspell"
 CACHE_FILE="$CACHE_DIR/hunspell.tar.gz"
 VERSION=1.6.2
 
+echo "----------> Build dir $BUILD_DIR"
+echo "----------> cache dir $CACHE_DIR"
+echo "----------> vendor dir $VENDOR_DIR"
+echo "----------> install dir $INSTALL_DIR"
+echo "----------> cache file $CACHE_FILE"
+
 if [ ! -f $CACHE_FILE ]; then
   
   echo "-----> Extracting Hunspell"
@@ -21,6 +27,7 @@ if [ ! -f $CACHE_FILE ]; then
 
   echo "-----> Building Hunspell"
   cd hunspell-$VERSION
+  ls -1
   export CPPFLAGS="-I$INSTALL_DIR/include"
   export LDFLAGS="-L$INSTALL_DIR/lib"
   ./configure --prefix=$INSTALL_DIR
