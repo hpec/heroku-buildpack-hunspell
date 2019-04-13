@@ -30,6 +30,7 @@ if [ ! -f $CACHE_FILE ]; then
   ls -1
   export CPPFLAGS="-I$INSTALL_DIR/include"
   export LDFLAGS="-L$INSTALL_DIR/lib"
+  autoreconf -vfi
   ./configure --prefix=$INSTALL_DIR
   make && make install
   cd ..
