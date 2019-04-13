@@ -9,7 +9,7 @@ echo "-----> Install Hunspell"
 BUILD_DIR=$1
 CACHE_DIR=$2
 VENDOR_DIR="$BUILD_DIR/vendor"
-INSTALL_DIR="$VENDOR_DIR/hunspell"
+INSTALL_DIR="$HOME/hunspell"
 CACHE_FILE="$CACHE_DIR/hunspell.tar.gz"
 VERSION=1.6.2
 
@@ -24,7 +24,7 @@ if [ ! -f $CACHE_FILE ]; then
   echo "-----> Extracting Hunspell"
   cd $(pwd)/vendor/hunspell
   tar -zxvf hunspell-$VERSION.tar.gz | indent
-
+  
   echo "-----> Building Hunspell"
   cd hunspell-$VERSION
   ls -1
